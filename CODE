@@ -1,1 +1,2 @@
 #import dataset
+read.csv("CrimeagainstWomen.csv",HEADER="TRUE",sep=",")
