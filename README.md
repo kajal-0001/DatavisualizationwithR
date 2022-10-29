@@ -11,3 +11,6 @@ The dataset contains the various crimes stats like Rape, Domestic Violence, Dowr
 
 CLEANING THE DATASET
 There were many repeated rows. In some places, different letter cases were used for the same word as in Assam and ASSAM. Other places have improper spacing, and shorthands were used for the State/UT. Delhi was repeated with the suffix UT.
+Some rows contain the total for that particular district which we don’t want. So we are dropping all the columns which contain the word TOTAL.
+After cleaning, this is how our final dataset will look like.
+
