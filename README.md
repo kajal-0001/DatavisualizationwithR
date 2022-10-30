@@ -15,3 +15,4 @@ Some rows contain the total for that particular district which we don’t want. 
 After cleaning, this is how our final dataset will look like.
 
 ANALYSING EACH CRIME BY YEAR
+We group all the rows in the dataset by years.
