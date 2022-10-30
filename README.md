@@ -14,3 +14,4 @@ There were many repeated rows. In some places, different letter cases were used 
 Some rows contain the total for that particular district which we don’t want. So we are dropping all the columns which contain the word TOTAL.
 After cleaning, this is how our final dataset will look like.
 
+ANALYSING EACH CRIME BY YEAR
