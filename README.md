@@ -16,3 +16,5 @@ After cleaning, this is how our final dataset will look like.
 
 ANALYSING EACH CRIME BY YEAR
 We group all the rows in the dataset by years.
+With this data frame, we were able to find the total number of cases which was more than 26 lakh and they were registered between 2018 and 2020
+With the help of plotly, an open-source interactive graphing library for charts to present each type of crime by years.
