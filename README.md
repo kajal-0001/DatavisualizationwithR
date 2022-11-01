@@ -5,6 +5,15 @@ INTRODUCTION
 The main agenda of this project is to analyze crime data by following all the steps required for the complete data visualization.
 Throughout this project,we will try to see if at all there is a reduction in crimes as the year count increases. We will visualize each column of data (mentioned above) state-wise & year-wise, and thus visualize it in a much better way. 
 
+CHARTS AND GRAPHS SUPPORTED
+• Pie chart
+• Bar chart
+• Box plots
+• Historams
+• Line graphs
+• Scatter plots
+
+
 DOWNLOADING THE DATASET
 
 Dataset is from Kaggle: View it here. This dataset contains statistics of various crimes cases against women from the year 2018–2020 with State or Union Territories.
