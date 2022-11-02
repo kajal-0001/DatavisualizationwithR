@@ -5,6 +5,8 @@ INTRODUCTION
 The main agenda of this project is to analyze crime data by following all the steps required for the complete data visualization.
 Throughout this project,we will try to see if at all there is a reduction in crimes as the year count increases. We will visualize each column of data (mentioned above) state-wise & year-wise, and thus visualize it in a much better way. 
 
+Data Source → Crimes Against Women - kaggle.com
+
 CHARTS AND GRAPHS SUPPORTED
 • Pie chart
 • Bar chart
