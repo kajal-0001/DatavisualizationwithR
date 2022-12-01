@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 df = pd.read_csv('caw_2001-2014.csv', index_col=0)
-df.columns = ['state_unit', 'district', 'year', 'rape', 'kidnap_abduction', 'dowry_deaths', 
-              'women_assault', 'women_insult', 'husband_relative_cruelty', 'girl_importation']
+df.columns = ['state_unit', 'district', 'year', 'rape', 'kidnap_abduction', 'dowry_deaths', 'women_assault', 'women_insult', 'husband_relative_cruelty', 'girl_importation']
 df.index = list(range(df.shape[0]))
+for col in df.columns:
+    df[col] = df[col].apply(lambda x : x.title() if isinstance(x, str) else x)
+
