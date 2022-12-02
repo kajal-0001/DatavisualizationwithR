@@ -10,4 +10,13 @@ df.columns = ['state_unit', 'district', 'year', 'rape', 'kidnap_abduction', 'dow
 df.index = list(range(df.shape[0]))
 for col in df.columns:
     df[col] = df[col].apply(lambda x : x.title() if isinstance(x, str) else x)
-
+replacements = {
+    'A & N Islands' : 'Andaman and Nicobar',
+    'A&N Islands' : 'Andaman and Nicobar',
+    'Daman & Diu' : 'Daman and Diu',
+    'Delhi Ut' : 'Delhi',
+    'D & N Haveli' : 'Dadra and Nagar Haveli',
+    'D&N Haveli' : 'Dadra and Nagar Haveli',
+    'Odisha' : 'Orissa',
+    'Jammu & Kashmir' : 'Jammu and Kashmir'
+}
