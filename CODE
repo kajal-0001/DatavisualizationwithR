@@ -20,3 +20,5 @@ replacements = {
     'Odisha' : 'Orissa',
     'Jammu & Kashmir' : 'Jammu and Kashmir'
 }
+for (o, r) in replacements.items():
+    df['state_unit'].replace(to_replace=o, value=r, inplace=True)
