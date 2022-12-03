@@ -22,3 +22,10 @@ replacements = {
 }
 for (o, r) in replacements.items():
     df['state_unit'].replace(to_replace=o, value=r, inplace=True)
+def split_data(dframe):
+    min_year = dframe['year'].min()
+    max_year = dframe['year'].max()
+    data_year_wise = {
+        year : dframe[dframe['year'] == year] for year in range(min_year, max_year + 1)
+    }
+    return data_year_wise
