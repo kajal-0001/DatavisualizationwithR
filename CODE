@@ -29,3 +29,18 @@ def split_data(dframe):
         year : dframe[dframe['year'] == year] for year in range(min_year, max_year + 1)
     }
     return data_year_wise
+# --------------
+
+data_splits = split_data(dframe=df)
+for (y, d) in data_splits.items():
+    print(y, '\t→', d.shape)
+
+# --------------
+'''
+2001     → (716, 10)
+2002     → (719, 10)
+2003     → (728, 10)
+2004     → (729, 10)
+...
+2014     → (837, 10)
+'''
