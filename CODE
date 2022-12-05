@@ -44,3 +44,14 @@ for (y, d) in data_splits.items():
 ...
 2014     → (837, 10)
 '''
+def categorize_crimes(data_source, state_unit=None):
+    crime_list = list(data_source[2001].columns[3:])
+
+    all_crimes_year_wise = {}
+    for (y, d) in data_source.items():
+        y_df = d[d['district'].str.contains('Total')]
+        if state_unit:
+            y_df = y_df[y_df['state_unit'] == state_unit.title()]
+        crime_dict = {col : y_df[col].sum() for col in crime_list}
+        # all_crimes_year_wise[y] = dict(sorted(crime_dict.items(), key=lambda x:x[1], reverse=True))
+        all_crimes_year_wise[y] = crime_dict
