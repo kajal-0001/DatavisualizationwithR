@@ -55,3 +55,14 @@ def categorize_crimes(data_source, state_unit=None):
         crime_dict = {col : y_df[col].sum() for col in crime_list}
         # all_crimes_year_wise[y] = dict(sorted(crime_dict.items(), key=lambda x:x[1], reverse=True))
         all_crimes_year_wise[y] = crime_dict
+    return all_crimes_year_wise
+def plot_overall_crimes_by_year(data_source, state_unit=None, kind='bar'):
+    crimes_data = categorize_crimes(data_source=data_source, state_unit=state_unit)
+    year_sum_crimes = {y : sum(list(cr.values())) for (y, cr) in crimes_data.items()}
+
+    y_keys = list(year_sum_crimes.keys())
+    y_vals = list(year_sum_crimes.values())
+
+    t = 'Total Crimes - {}'
+    title = t.format(state_unit.title()) if state_unit else t.format('India')
+        
