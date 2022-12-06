@@ -65,4 +65,18 @@ def plot_overall_crimes_by_year(data_source, state_unit=None, kind='bar'):
 
     t = 'Total Crimes - {}'
     title = t.format(state_unit.title()) if state_unit else t.format('India')
-        
+if kind == 'bar':
+        trace = go.Bar(x=y_keys, y=y_vals)
+    else:
+        trace = go.Pie(labels=y_keys, values=y_vals)
+
+    layout = go.Layout(
+        height=400,
+        width=600,
+        title=title,
+        margin=dict(l=0, r=0, b=0, t=40)
+    )
+
+    fig = go.Figure(data=[trace], layout=layout)
+    fig.show()
+    return NONE        
