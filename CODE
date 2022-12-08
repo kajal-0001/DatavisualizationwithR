@@ -80,3 +80,4 @@ if kind == 'bar':
     fig = go.Figure(data=[trace], layout=layout)
     fig.show()
     return NONE        
+plot_overall_crimes_by_year(data_source=data_splits)
