@@ -108,3 +108,6 @@ def plot_crimes_by_year(data_source, year, state_unit=None, kind='bar'):
     fig.show()
 
     return None
+plot_crimes_by_year(data_source=data_splits, year=2001)
+plot_crimes_by_year(data_source=data_splits, year=2001, state_unit='Andhra Pradesh')
+
