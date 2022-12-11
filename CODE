@@ -110,4 +110,35 @@ def plot_crimes_by_year(data_source, year, state_unit=None, kind='bar'):
     return None
 plot_crimes_by_year(data_source=data_splits, year=2001)
 plot_crimes_by_year(data_source=data_splits, year=2001, state_unit='Andhra Pradesh')
+def plot_overall_difference(data_source, ideal_year, cwith_year, state_unit=None):
+    crime_data = categorize_crimes(data_source=data_source, state_unit=state_unit)
+
+    ideal_year_crimes = crime_data[ideal_year]
+    cwith_year_crimes = crime_data[cwith_year]
+
+    t = '{} vs {} - diff - {}'
+    title = t.format(ideal_year, cwith_year, state_unit.title()) if state_unit else t.format(ideal_year, cwith_year, 'India')
+
+    trace1 = go.Bar(
+        x=list(ideal_year_crimes.keys()),
+        y=list(ideal_year_crimes.values()),
+        name=ideal_year
+    )
+    trace2 = go.Bar(
+        x=list(cwith_year_crimes.keys()),
+        y=list(cwith_year_crimes.values()),
+        name=cwith_year
+    )
+
+    layout = go.Layout(
+        height=400,
+        width=600,
+        title=title,
+        margin=dict(l=0, r=0, b=0, t=40)
+    )
+
+    fig = go.Figure(data=[trace1, trace2], layout=layout)
+    fig.show()
+
+    return None
 
