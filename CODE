@@ -141,4 +141,10 @@ def plot_overall_difference(data_source, ideal_year, cwith_year, state_unit=None
     fig.show()
 
     return None
+    plot_crimes_by_year(data_source=data_splits, year=2001)
+plot_crimes_by_year(data_source=data_splits, year=2001, state_unit='Andhra Pradesh')
+def plot_overall_difference(data_source, ideal_year, cwith_year, state_unit=None):
+    crime_data = categorize_crimes(data_source=data_source, state_unit=state_unit)
+
+    
 
