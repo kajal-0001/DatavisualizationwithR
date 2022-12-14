@@ -167,3 +167,4 @@ y_keys = list(year_sum_crimes.keys())
     fig.show()
 
     return None
+plot_crimes_by_year(data_source=data_splits, year=2001)
