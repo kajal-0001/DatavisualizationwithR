@@ -175,3 +175,12 @@ def plot_overall_difference(data_source, ideal_year, cwith_year, state_unit=None
 
     ideal_year_crimes = crime_data[ideal_year]
     cwith_year_crimes = crime_data[cwith_year]
+    
+     t = '{} vs {} - diff - {}'
+    title = t.format(ideal_year, cwith_year, state_unit.title()) if state_unit else t.format(ideal_year, cwith_year, 'India')
+
+    trace1 = go.Bar(
+        x=list(ideal_year_crimes.keys()),
+        y=list(ideal_year_crimes.values()),
+        name=ideal_year
+    )
