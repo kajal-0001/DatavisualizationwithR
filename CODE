@@ -184,3 +184,8 @@ def plot_overall_difference(data_source, ideal_year, cwith_year, state_unit=None
         y=list(ideal_year_crimes.values()),
         name=ideal_year
     )
+trace2 = go.Bar(
+        x=list(cwith_year_crimes.keys()),
+        y=list(cwith_year_crimes.values()),
+        name=cwith_year
+    )
