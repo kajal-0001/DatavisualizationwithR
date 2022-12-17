@@ -189,3 +189,9 @@ trace2 = go.Bar(
         y=list(cwith_year_crimes.values()),
         name=cwith_year
     )
+layout = go.Layout(
+        height=400,
+        width=600,
+        title=title,
+        margin=dict(l=0, r=0, b=0, t=40)
+    )
