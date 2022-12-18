@@ -195,3 +195,7 @@ layout = go.Layout(
         title=title,
         margin=dict(l=0, r=0, b=0, t=40)
     )
+fig = go.Figure(data=[trace1, trace2], layout=layout)
+    fig.show()
+
+    return None
