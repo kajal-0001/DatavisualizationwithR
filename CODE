@@ -199,3 +199,6 @@ fig = go.Figure(data=[trace1, trace2], layout=layout)
     fig.show()
 
     return None
+    plot_overall_difference(data_source=data_splits, ideal_year=2001, cwith_year=2014)
+plot_overall_difference(data_source=data_splits, ideal_year=2001, cwith_year=2012, state_unit='Andhra Pradesh')
+
