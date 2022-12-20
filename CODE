@@ -201,4 +201,13 @@ fig = go.Figure(data=[trace1, trace2], layout=layout)
     return None
     plot_overall_difference(data_source=data_splits, ideal_year=2001, cwith_year=2014)
 plot_overall_difference(data_source=data_splits, ideal_year=2001, cwith_year=2012, state_unit='Andhra Pradesh')
+def plot_crime_overall_diff(data_source, crime, state_unit=None, kind='bar'):
+    crime_data = categorize_crimes(data_source=data_source, state_unit=state_unit)
+
+    years_x = list(crime_data.keys())
+    crime_y = [cr[crime] for (y, cr) in crime_data.items()]
+
+    t = '{} - {} | {} → {}'
+    min_y = years_x[0]; max_y = years_x[-1]
+    title = t.format(min_y, max_y, state_unit.title(), crime) if state_unit else t.format(min_y, max_y, 'India', crime)
 
