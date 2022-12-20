@@ -210,4 +210,7 @@ def plot_crime_overall_diff(data_source, crime, state_unit=None, kind='bar'):
     t = '{} - {} | {} → {}'
     min_y = years_x[0]; max_y = years_x[-1]
     title = t.format(min_y, max_y, state_unit.title(), crime) if state_unit else t.format(min_y, max_y, 'India', crime)
-
+    if kind == 'bar':
+        trace = go.Bar(x=years_x, y=crime_y)
+    else:
+        trace = go.Pie(labels=years_x, values=crime_y)
