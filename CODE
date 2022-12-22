@@ -225,3 +225,6 @@ def plot_crime_overall_diff(data_source, crime, state_unit=None, kind='bar'):
     fig.show()
 
     return None
+
+plot_crime_overall_diff(data_source=data_splits, crime='rape')
+plot_crime_overall_diff(data_source=data_splits, crime='rape', state_unit='Andhra Pradesh')
