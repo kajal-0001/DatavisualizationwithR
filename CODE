@@ -214,3 +214,14 @@ def plot_crime_overall_diff(data_source, crime, state_unit=None, kind='bar'):
         trace = go.Bar(x=years_x, y=crime_y)
     else:
         trace = go.Pie(labels=years_x, values=crime_y)
+    layout = go.Layout(
+        height=400,
+        width=600,
+        title=title,
+        margin=dict(l=0, r=0, b=0, t=40)
+    )
+
+    fig = go.Figure(data=[trace], layout=layout)
+    fig.show()
+
+    return None
