@@ -228,3 +228,13 @@ def plot_crime_overall_diff(data_source, crime, state_unit=None, kind='bar'):
 
 plot_crime_overall_diff(data_source=data_splits, crime='rape')
 plot_crime_overall_diff(data_source=data_splits, crime='rape', state_unit='Andhra Pradesh')
+def plot_column(data_source, year, crime, state_unit=None, kind='bar'):
+    states_x, crime_y = obtain_features(data_source=data_source, year=year, crime=crime, state_unit=state_unit)
+
+    t = '{} | {} → {}'
+    title = t.format(year, crime, state_unit.title()) if state_unit else t.format(year, crime, 'India')
+
+    if kind == 'bar':
+        trace = go.Bar(x=states_x, y=crime_y)
+    else:
+        trace = go.Pie(labels=states_x, values=crime_y)
