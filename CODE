@@ -238,3 +238,10 @@ def plot_column(data_source, year, crime, state_unit=None, kind='bar'):
         trace = go.Bar(x=states_x, y=crime_y)
     else:
         trace = go.Pie(labels=states_x, values=crime_y)
+         layout = go.Layout(
+        height=400,
+        width=600,
+        title=title,
+        margin=dict(l=0, r=0, b=0, t=40)
+    )
+
