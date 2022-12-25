@@ -245,3 +245,7 @@ def plot_column(data_source, year, crime, state_unit=None, kind='bar'):
         margin=dict(l=0, r=0, b=0, t=40)
     )
 
+fig = go.Figure(data=[trace], layout=layout)
+    fig.show()
+
+    return None
