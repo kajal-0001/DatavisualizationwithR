@@ -249,3 +249,6 @@ fig = go.Figure(data=[trace], layout=layout)
     fig.show()
 
     return None
+    plot_column(data_source=data_splits, year=2001, crime='kidnap_abduction')
+    plot_column(data_source=data_splits, year=2001, crime='kidnap_abduction', state_unit='Andhra Pradesh')
+
