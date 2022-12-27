@@ -251,4 +251,10 @@ fig = go.Figure(data=[trace], layout=layout)
     return None
     plot_column(data_source=data_splits, year=2001, crime='kidnap_abduction')
     plot_column(data_source=data_splits, year=2001, crime='kidnap_abduction', state_unit='Andhra Pradesh')
+def get_india_map(year, state_unit=None):
+    if year < 2014:
+        if not state_unit:
+            return 'https://raw.githubusercontent.com/geohacker/india/master/state/india_state.geojson'
+        return 'https://raw.githubusercontent.com/geohacker/india/master/district/india_district.geojson'
+    return 'https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson'
 
