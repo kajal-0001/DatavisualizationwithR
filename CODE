@@ -263,3 +263,5 @@ def get_districts_json(year, state_unit=None):
 
     if not state_unit:
         return geo_link
+ req_data = requests.get(url=geo_link)
+    req_json = req_data.json()['features']
