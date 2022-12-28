@@ -258,3 +258,8 @@ def get_india_map(year, state_unit=None):
         return 'https://raw.githubusercontent.com/geohacker/india/master/district/india_district.geojson'
     return 'https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson'
 
+def get_districts_json(year, state_unit=None):
+    geo_link = get_india_map(year=year, state_unit=state_unit)
+
+    if not state_unit:
+        return geo_link
