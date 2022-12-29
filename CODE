@@ -265,3 +265,12 @@ def get_districts_json(year, state_unit=None):
         return geo_link
  req_data = requests.get(url=geo_link)
     req_json = req_data.json()['features']
+state_districts = []
+    for feature in req_json:
+        if feature['properties']['NAME_1'] == state_unit:
+            state_districts.append(feature)
+return {
+        "type": "FeatureCollection",
+        "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+        "features" : state_districts
+    }
