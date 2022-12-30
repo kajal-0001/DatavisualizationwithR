@@ -274,3 +274,8 @@ return {
         "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
         "features" : state_districts
     }
+def plot_state_wise(data_source, year, crime, state_unit=None):
+    state_unit = None
+    state_x, crime_y = obtain_features(data_source=data_source, year=year, crime=crime, state_unit=state_unit)
+    df_cols = ['name', 'crime_count']
+    state_crime_df = pd.DataFrame(data=zip(state_x, crime_y), columns=df_cols)
