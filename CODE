@@ -279,3 +279,14 @@ def plot_state_wise(data_source, year, crime, state_unit=None):
     state_x, crime_y = obtain_features(data_source=data_source, year=year, crime=crime, state_unit=state_unit)
     df_cols = ['name', 'crime_count']
     state_crime_df = pd.DataFrame(data=zip(state_x, crime_y), columns=df_cols)
+     trace = go.Choropleth(
+        geojson=get_districts_json(year=year, state_unit=state_unit),
+        featureidkey='properties.NAME_1',
+        locations=state_crime_df['name'],
+        z=state_crime_df['crime_count'],
+        colorscale='Reds',
+        marker_line_color='black',
+        colorbar=dict(
+            title={'text': "Crime Range"},
+        )
+    )
