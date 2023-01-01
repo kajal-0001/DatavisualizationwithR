@@ -290,3 +290,18 @@ def plot_state_wise(data_source, year, crime, state_unit=None):
             title={'text': "Crime Range"},
         )
     )
+    layout = go.Layout(
+        title="{} → Crime Activity - {}".format(year, crime),
+        geo=dict(
+            visible=False,
+            lonaxis={'range': [65, 100]},
+            lataxis={'range': [5, 40]}
+        ),
+        margin=dict(l=0, b=0, t=30, r=0),
+        height=600,
+        width=600
+    )
+
+    fig = go.Figure(data=[trace], layout=layout)
+    fig.show()
+    return None
