@@ -305,3 +305,6 @@ def plot_state_wise(data_source, year, crime, state_unit=None):
     fig = go.Figure(data=[trace], layout=layout)
     fig.show()
     return None
+    plot_state_wise(data_source=data_splits, year=2001, crime='dowry_deaths')
+    plot_state_wise(data_source=data_splits, year=2014, crime='dowry_deaths')
+
